@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Angel 🤍</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #fff0f6, #fdeff9);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    font-size: 22px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.6;
+}
+.heart:nth-child(1){left:10%;animation-delay:0s;}
+.heart:nth-child(2){left:30%;animation-delay:2s;}
+.heart:nth-child(3){left:50%;animation-delay:4s;}
+.heart:nth-child(4){left:70%;animation-delay:1s;}
+.heart:nth-child(5){left:90%;animation-delay:3s;}
+
+@keyframes floatUp {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+    font-size: 14px;
+    animation: sparkle 3s ease-in-out infinite;
+    opacity: 0.7;
+}
+@keyframes sparkle {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.5); opacity: 0; }
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 45px;
+    border-radius: 30px;
+    max-width: 540px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+    animation: fadeIn 1.6s ease;
+    z-index: 2;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #c9184a;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.pickup {
+    font-style: italic;
+    color: #ff758f;
+    margin-top: 12px;
+}
+
+/* Buttons */
+button {
+    margin-top: 26px;
+    padding: 12px 36px;
+    border: none;
+    border-radius: 30px;
+    background: #ff758f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: scale(1.07);
+    background: #ff4d6d;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Heartbeat */
+.big-heart {
+    font-size: 120px;
+    animation: beat 1.2s infinite;
+    margin-bottom: 20px;
+}
+@keyframes beat {
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+}
+
+.success {
+    font-size: 20px;
+    color: #4caf50;
+    margin-top: 22px;
+    animation: fadeIn 1s ease;
+}
+
+/* Typing effect */
+.typing {
+    border-right: 2px solid #ff758f;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(60, end), blink 0.8s infinite;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Hug animation */
+.hug-container {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    margin: 30px auto 0;
+}
+
+.arm {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    background: #ffb3c6;
+    border-radius: 40px;
+    top: 55px;
+    animation: hug 2s ease forwards;
+}
+
+.arm.left {
+    left: 0;
+    transform-origin: left center;
+}
+
+.arm.right {
+    right: 0;
+    transform-origin: right center;
+}
+
+@keyframes hug {
+    0% { transform: rotate(0deg) translateX(0); }
+    100% { transform: rotate(15deg) translateX(30px); }
+}
+
+.hug-heart {
+    position: absolute;
+    font-size: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: hugHeart 1.8s ease infinite;
+}
+
+@keyframes hugHeart {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="heart">🤍</div>
+<div class="heart">💗</div>
+<div class="heart">💞</div>
+<div class="heart">💕</div>
+<div class="heart">💖</div>
+
+<!-- Sparkles -->
+<div class="sparkle" style="top:20%;left:15%;">✨</div>
+<div class="sparkle" style="top:70%;left:80%;">✨</div>
+<div class="sparkle" style="top:40%;left:60%;">✨</div>
+
+<div class="card">
+
+<!-- PAGE 1 -->
+<div id="page1">
+    <h1>Angel 🤍</h1>
+    <p class="typing">
+        If my heart could talk, it would say your name — Angel.
+    </p>
+    <p>
+        I never meant to hurt you, Angel.
+        And realizing that I did has been sitting heavy on my heart.
+        <br><br>
+        You matter to me more than I’ve ever been able to explain.
+    </p>
+    <p class="pickup">
+        ✨ Are you my favorite song, Angel? Because you never stop playing in my heart.
+    </p>
+    <button onclick="nextPage(1)">Keep reading 🤍</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="hidden">
+    <h1>About Us 💗</h1>
+    <p>
+        Angel, you are my calm in the chaos.
+        My comfort without asking.
+        <br><br>
+        With you, even silence feels safe.
+    </p>
+    <p class="pickup">
+        🌙 Are you home, Angel? Because my heart always knows where you are.
+    </p>
+    <button onclick="nextPage(2)">There’s more 💌</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="hidden">
+    <h1>I Promise 🌱</h1>
+    <p style="text-align:left;">
+        • To listen to you with my whole heart<br>
+        • To choose patience over pride<br>
+        • To protect what we have, Angel<br>
+        • To love you gently
+    </p>
+    <p class="pickup">
+        💞 If love was a language, Angel, you’d be my favorite word.
+    </p>
+    <button onclick="nextPage(3)">My heart 🤍</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="hidden">
+    <div class="big-heart">❤️</div>
+    <p>
+        Even on the days I fail…<br>
+        even when things feel heavy…
+        <br><br>
+        my heart still chooses you, Angel.
+    </p>
+    <p class="pickup">
+        💓 Are you gravity, Angel? Because you pull me back every single time.
+    </p>
+    <button onclick="nextPage(4)">One last thing 🤍</button>
+</div>
+
+<!-- PAGE 5 -->
+<div id="page5" class="hidden">
+    <h1>No pressure 🤍</h1>
+    <p>
+        No rushing.<br>
+        No expectations.
+    </p>
+
+    <p style="font-style:italic; color:#666;">
+        Not with words — but with actions, Angel.
+    </p>
+
+    <p class="pickup">
+        🕊️ If I had one wish, Angel, it would be us — always.
+    </p>
+
+    <button onclick="forgiveMe()">Let me love you better 🫂</button>
+
+    <div id="forgiven" class="hidden success">
+        Thank you for giving me this moment, Angel 🤍<br><br>
+        I may not be perfect,<br>
+        but I promise to listen more,<br>
+        care deeper,<br>
+        and love you better — every single day.
+    </div>
+
+    <div id="hug" class="hidden">
+        <div class="hug-container">
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="hug-heart">🫂</div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+function nextPage(num) {
+    document.getElementById("page" + num).classList.add("hidden");
+    document.getElementById("page" + (num + 1)).classList.remove("hidden");
+}
+
+function forgiveMe() {
+    document.getElementById("forgiven").classList.remove("hidden");
+    document.getElementById("hug").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
